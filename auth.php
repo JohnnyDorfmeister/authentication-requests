@@ -6,13 +6,13 @@ if(!isset($_POST['username']))
 {
 	die("Eat shit and die...");
 }
-if($_POST['username'] == "johnny" && $_POST['password'] == "letmein")
+if($_POST['username'] == "johnny" && $_POST['password'] == removed for security reasons)
 {
 	$_SESSION["loggedin"] = "true";
 	include("flag.php");
 	die();
 }else{
-	echo "<form method=\"POST\" action=\"http://authentication.howitshould.be/auth.php\">\n";
+	echo "<form method=\"POST\" action=\"" . $_SERVER['PHP_SELF'] . "\">\n";
 	echo "<table align=\"center\">\n";
 	echo "	<tr><td>Username:&nbsp;<td><input type=\"text\" name=\"username\"></tr>\n";
 	echo "	<tr><td>Password:&nbsp;<td><input type=\"password\" name=\"password\"></tr>\n";
